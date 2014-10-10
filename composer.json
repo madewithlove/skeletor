@@ -5,7 +5,16 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*"
+	  	"raveren/kint": "~0.9.1",
+		"laravel/framework": "4.2.*",
+		"rcrowe/twigbridge": "~0.6.1",
+		"anahkiasen/arrounded": "dev-develop"
+	},
+	"require-dev": {
+	  "fabpot/php-cs-fixer": "~0.5",
+	  "way/generators": "~2.6.1",
+	  "codeception/codeception": "~2.0.5",
+	  "barryvdh/laravel-ide-helper": "~1.11.3"
 	},
 	"autoload": {
 		"classmap": [
@@ -15,7 +24,10 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+		"psr-4": {
+		  "App\\": "app/App"
+		}
 	},
 	"scripts": {
 		"post-install-cmd": [
@@ -27,9 +39,22 @@
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
+			"mv app/models/User app/App/Models/User",
+			"mv app/storage ./storage",
+		  	"rm app/tests/ExampleTest.php app/database/seeds/.gitkeep readme.md CONTRIBUTING.md app/controllers/*.php app/views/hello.php app/models",
+			"vendor/bin/php-cs-fixer fix app --fixers=-indentation",
 			"php artisan key:generate"
 		]
 	},
+	"repositories": [
+	  {
+		"type": "composer",
+		"url": "http://toran.dev/repo/packagist/"
+	  },
+	  {
+		"packagist": false
+	  }
+	],
 	"config": {
 		"preferred-install": "dist"
 	},
