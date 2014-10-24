@@ -5,10 +5,10 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-	  	"raveren/kint": "~0.9.1",
+	  "raveren/kint": "~0.9.1",
 		"laravel/framework": "4.2.*",
 		"rcrowe/twigbridge": "~0.6.1",
-		"anahkiasen/arrounded": "dev-develop"
+		"anahkiasen/arrounded": "~0.3.1"
 	},
 	"require-dev": {
 	  "fabpot/php-cs-fixer": "~0.5",
@@ -19,8 +19,6 @@
 	"autoload": {
 		"classmap": [
 			"app/commands",
-			"app/controllers",
-			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
@@ -39,9 +37,10 @@
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
+			"mkdir -p app/App/Models",
 			"mv app/models/User app/App/Models/User",
 			"mv app/storage ./storage",
-		  	"rm app/tests/ExampleTest.php app/database/seeds/.gitkeep readme.md CONTRIBUTING.md app/controllers/*.php app/views/hello.php app/models",
+		  "rm -rf app/tests/ExampleTest.php app/database/seeds/.gitkeep readme.md CONTRIBUTING.md app/controllers app/commands app/models app/views/hello.php",
 			"vendor/bin/php-cs-fixer fix app --fixers=-indentation",
 			"php artisan key:generate"
 		]
