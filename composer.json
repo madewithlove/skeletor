@@ -11,7 +11,8 @@
     "raveren/kint": "~0.9.1",
     "laravel/framework": "4.2.*",
     "rcrowe/twigbridge": "~0.6.1",
-    "anahkiasen/arrounded": "~0.3.2"
+    "anahkiasen/arrounded": "~0.3.2",
+    "bugsnag/bugsnag-laravel": "~1.1"
   },
   "require-dev": {
     "fabpot/php-cs-fixer": "~0.5",
