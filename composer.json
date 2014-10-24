@@ -50,7 +50,8 @@
       "vendor/bin/codecept bootstrap app",
       "mv app/codeception.yml ./codeception.yml",
       "php artisan key:generate",
-      "curl -L http://bit.ly/vaprobash > Vagrantfile"
+      "curl -L http://bit.ly/vaprobash > Vagrantfile",
+      "git init"
     ]
   },
   "repositories": [
