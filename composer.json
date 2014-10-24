@@ -49,7 +49,8 @@
       "vendor/bin/php-cs-fixer fix app --fixers=-indentation",
       "vendor/bin/codecept bootstrap app",
       "mv app/codeception.yml ./codeception.yml",
-      "php artisan key:generate"
+      "php artisan key:generate",
+      "curl -L http://bit.ly/vaprobash > Vagrantfile"
     ]
   },
   "repositories": [
