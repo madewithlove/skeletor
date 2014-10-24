@@ -45,12 +45,12 @@
       "mv app/models/User.php app/App/Models/User.php",
       "mv app/storage ./storage",
       "rm -rf app/tests/ExampleTest.php app/database/seeds/.gitkeep readme.md CONTRIBUTING.md app/controllers app/tests/* app/commands app/models app/views/hello.php",
-      "vendor/bin/php-cs-fixer fix app --fixers=-indentation",
       "vendor/bin/codecept bootstrap app",
       "mv app/codeception.yml ./codeception.yml",
       "php artisan key:generate",
       "curl -L http://bit.ly/vaprobash > Vagrantfile",
-      "git init"
+      "git init",
+      "vendor/bin/php-cs-fixer fix app --fixers='-indentation'"
     ]
   },
   "repositories": [
