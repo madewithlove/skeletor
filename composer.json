@@ -43,7 +43,7 @@
     ],
     "post-create-project-cmd": [
       "mkdir -p app/App/Models",
-      "mv app/models/User app/App/Models/User",
+      "mv app/models/User.php app/App/Models/User.php",
       "mv app/storage ./storage",
       "rm -rf app/tests/ExampleTest.php app/database/seeds/.gitkeep readme.md CONTRIBUTING.md app/controllers app/tests/* app/commands app/models app/views/hello.php",
       "vendor/bin/php-cs-fixer fix app --fixers=-indentation",
