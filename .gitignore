@@ -1,8 +1,32 @@
-/bootstrap/compiled.php
-/vendor
-composer.phar
-composer.lock
+# Cache and compiled
+bootstrap/compiled.php
+.sass-cache
+_ide_helper.php
+_ide_helper_models.php
+
+# Assets
+*.css.map
+*.js.map
+public/app/css
+public/app/fonts
+public/app/js
+public/app/sass/font
+public/builds
+
+# Dependencies
+node_modules
+public/components
+vendor
+
+# Localization
+*.mo
+*.pot
+
+# Development
 .env.*.php
 .env.php
+.vagrant
+
+# Dotfiles
 .DS_Store
 Thumbs.db
