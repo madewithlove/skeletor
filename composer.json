@@ -54,15 +54,6 @@
       "vendor/bin/php-cs-fixer fix app --fixers='-indentation'"
     ]
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "http://toran.dev/repo/packagist/"
-    },
-    {
-      "packagist": false
-    }
-  ],
   "config": {
     "preferred-install": "dist"
   },
