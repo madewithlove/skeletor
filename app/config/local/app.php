@@ -27,10 +27,10 @@ return array(
 	*/
 
 	'providers' => append_config(array(
-		'Barryvdh\Debugbar\ServicerProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'TwigBridge\ServiceProvider',
-		'Way\Generators\GeneratorsServicerProvider',
+		'Way\Generators\GeneratorsServiceProvider',
 	)),
 
 );
