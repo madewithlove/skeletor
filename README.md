@@ -2,8 +2,10 @@
 
 ## Creating a new project
 
+Replace `{project}` with the project name
+
 ```bash
-$ composer create-project madewithlove/skeletor -s dev
+$ composer create-project madewithlove/skeletor {project} -s dev
 ```
 
 ### Updating the skeleton
