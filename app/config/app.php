@@ -192,6 +192,9 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 
+		// Packages
+		'Assets' => 'Arrounded\Facades\Assets',
+
 	),
 
 );

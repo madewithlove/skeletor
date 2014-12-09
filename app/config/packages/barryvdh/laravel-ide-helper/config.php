@@ -11,8 +11,8 @@ return array(
 	|
 	*/
 
-	'filename'        => '_ide_helper',
-	'format'          => 'php',
+	'filename'  => '_ide_helper',
+	'format'    => 'php',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -24,8 +24,9 @@ return array(
 	|
 	*/
 
-	'include_helpers' => true,
-	'helper_files'    => array(
+	'include_helpers' => false,
+
+	'helper_files' => array(
 		base_path().'/vendor/laravel/framework/src/Illuminate/Support/helpers.php',
 	),
 
@@ -40,8 +41,9 @@ return array(
 	*/
 
 	'model_locations' => array(
-		'app/App/models',
+		'app/App/Models',
 	),
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,12 +54,13 @@ return array(
 	|
 	*/
 
-	'extra'           => array(
-		'Artisan'  => array('Illuminate\Foundation\Artisan'),
+	'extra' => array(
+		'Artisan' => array('Illuminate\Foundation\Artisan'),
 		'Eloquent' => array('Illuminate\Database\Eloquent\Builder', 'Illuminate\Database\Query\Builder'),
-		'Session'  => array('Illuminate\Session\Store'),
+		'Session' => array('Illuminate\Session\Store'),
 	),
-	'magic'           => array(
+
+	'magic' => array(
 		'Log' => array(
 			'debug'     => 'Monolog\Logger::addDebug',
 			'info'      => 'Monolog\Logger::addInfo',
@@ -80,7 +83,7 @@ return array(
 	|
 	*/
 
-	'interfaces'      => array(
+	'interfaces' => array(
 		'\Illuminate\Auth\UserInterface' => '\App\Models\User',
 	)
 

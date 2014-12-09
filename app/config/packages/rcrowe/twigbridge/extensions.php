@@ -23,6 +23,7 @@ return [
 	| `Twig_Extension_Debug` is enabled automatically if twig.debug is TRUE.
 	|
 	*/
+
 	'enabled'   => [
 		'TwigBridge\Extension\Loader\Facades',
 		'TwigBridge\Extension\Loader\Filters',
@@ -39,6 +40,7 @@ return [
 
 		// 'TwigBridge\Extension\Laravel\Legacy\Facades',
 	],
+
 	/*
 	|--------------------------------------------------------------------------
 	| Facades
@@ -66,7 +68,22 @@ return [
 	| in order to be marked as safe.
 	|
 	*/
-	'facades'   => [],
+
+	'facades'   => [
+		'HTML',
+		'URL',
+		'Str',
+		'Input',
+		'Carbon',
+		'Session',
+		'Auth',
+		'Request',
+		'Form',
+		'Config',
+		'Lang',
+		'Assets',
+	],
+
 	/*
 	|--------------------------------------------------------------------------
 	| Functions
@@ -95,7 +112,9 @@ return [
 	| </code>
 	|
 	*/
+
 	'functions' => [],
+
 	/*
 	|--------------------------------------------------------------------------
 	| Filters
@@ -124,6 +143,7 @@ return [
 	| </code>
 	|
 	*/
+
 	'filters'   => [],
 
 ];
