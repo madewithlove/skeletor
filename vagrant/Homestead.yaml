@@ -1,0 +1,16 @@
+---
+ip: "192.168.xxx.yyy" # change ip. Make xxx unique across all our projects
+memory: 2048
+cpus: 1
+
+folders:
+    - map: .
+      to: /vagrant/
+
+sites:
+    - map: projectname.dev # change to, well, <your projectname>.dev
+      to: /vagrant/public
+
+variables:
+    - key: APP_ENV
+      value: local
