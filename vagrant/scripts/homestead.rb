@@ -5,10 +5,6 @@ class Homestead
     config.vm.box_url = "https://vagrantcloud.com/laravel/homestead/version/9/provider/virtualbox.box"
     config.vm.hostname = "homestead"
 
-    # Configure A Private Network IP
-    # Change ip. Make xxx unique across all our projects
-    config.vm.network :private_network, ip: settings["ip"] ||= "192.168.xxx.yyy"
-
     # Configure A Few VirtualBox Settings
     config.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--memory", settings["memory"] ||= "2048"]
@@ -17,13 +13,22 @@ class Homestead
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     end
 
+    #######################################################################################
+    # Change ip and ports below for each new project
+    #######################################################################################
+
+    # Configure A Private Network IP
+    # Change IP: make 'xxx' unique across company
+    config.vm.network :private_network, ip: settings["ip"] ||= "192.168.xxx.yyy" 
+
     # Configure Port Forwarding To The Box
-    # Change the host ports to a variation. Fill IP's xxx value in to guarantuee uniqueness across projects.
-    # This way, if multiple boxes are up at the same time, there won't be collisions.
+    # Change the host ports. Fill IP's xxx value in to guarantuee uniqueness across projects.
     config.vm.network "forwarded_port", guest: 80, host: 8xxx
     config.vm.network "forwarded_port", guest: 22, host: 56xxx, id: "ssh"
     config.vm.network "forwarded_port", guest: 3306, host: 33xxx
     config.vm.network "forwarded_port", guest: 5432, host: 54xxx
+
+    #######################################################################################
 
     # Enable SSH agent forwarding
     config.ssh.forward_agent = true
