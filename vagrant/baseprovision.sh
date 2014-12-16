@@ -142,6 +142,9 @@ npm install -g grunt-cli
 npm install -g gulp
 npm install -g bower
 
+# Install RVM, Ruby, Bundler
+sh /vagrant/vagrant/scripts/rvm.sh
+
 # Install SQLite
 
 apt-get install -y sqlite3 libsqlite3-dev
