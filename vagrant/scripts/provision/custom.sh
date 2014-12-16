@@ -4,7 +4,7 @@
 
 # include parse_yaml function and parse our config file. Will be parsed with 'config_' prefix.
 . /vagrant/vagrant/scripts/util/parse_yaml.sh
-eval $(parse_yaml /vagrant/vagrant/skeletor.yaml "config_")
+eval $(parse_yaml /vagrant/vagrant/skeletor-config.yaml "config_")
 
 # Elasticsearch
 if [[ $config_elasticsearch == true ]] 
