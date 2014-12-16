@@ -19,9 +19,10 @@ class Skeletor
 	config.vm.network "forwarded_port", guest: 22, host: settings["ports"]["ssh"], id: "ssh"
 	config.vm.network "forwarded_port", guest: 3306, host: settings["ports"]["mysql"]
 
-	# Run The Base Provisioning Script
+	# Run The Base Provisioning Script 
+	# Installs the stuff we always need (PHP, nginx, etc)
 	config.vm.provision "shell" do |s|
-	  s.path = "./vagrant/provision.sh"
+	  s.path = "./vagrant/baseprovision.sh"
 	end
 
 	# Sync the vm's /vagrant folder to our project root
