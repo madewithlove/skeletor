@@ -27,12 +27,10 @@ class Skeletor
 	# Sync the vm's /vagrant folder to our project root
 	config.vm.synced_folder '.', '/vagrant/'
 
-	# Install All The Configured Nginx Sites
-	settings["sites"].each do |site|
-	  config.vm.provision "shell" do |s|
-	  	s.inline = "bash /vagrant/vagrant/nginx-serve.sh $1 $2"
-	    s.args = [site["map"], site["to"]]
-	  end
+	# Make an nginx vhost with <projectname>.dev as url and /vagrant/public as docroot
+	config.vm.provision "shell" do |s|
+	  s.inline = "bash /vagrant/vagrant/nginx-serve.sh $1 $2"
+	  s.args = [ settings[projectname] + '.dev' ], '/vagrant/public' ]
 	end
 
 	# Configure All Of The Server Environment Variables
