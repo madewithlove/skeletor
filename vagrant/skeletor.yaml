@@ -1,6 +1,9 @@
 ---
-ip: "192.168.57.100" # change - make 'xxx' unique across projects
-projectname: "projectname" # change to your project name
+# change - make 'xxx' unique across projects
+ip: "192.168.57.100"
+
+ # change to your project name
+projectname: "projectname"
 
 ports:
     ssh: "56201"
@@ -10,3 +13,6 @@ ports:
 variables:
     - key: APP_ENV
       value: local
+
+# Set to true what you want to install on top of the base box
+elasticsearch: true
