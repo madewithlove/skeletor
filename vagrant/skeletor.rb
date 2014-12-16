@@ -25,7 +25,7 @@ class Skeletor
 	  s.path = "./vagrant/baseprovision.sh"
 
 	  # Install the custom things we selected in our config file
-	  s.path = "./vagrant/customprovision.sh"
+	  s.path = "./vagrant/scripts/customprovision.sh"
 	end
 
 	# Sync the vm's /vagrant folder to our project root
