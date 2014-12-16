@@ -7,10 +7,6 @@ ports:
     web: "8000"
     mysql: "33060"
 
-folders:
-    - map: .
-      to: /vagrant/
-
 sites:
     - map: projectname.dev # change
       to: /vagrant/public

@@ -24,10 +24,8 @@ class Skeletor
 	  s.path = "./vagrant/provision.sh"
 	end
 
-	# Register All Of The Configured Shared Folders
-	settings["folders"].each do |folder|
-	  config.vm.synced_folder folder["map"], folder["to"]
-	end
+	# Sync the vm's /vagrant folder to our project root
+	config.vm.synced_folder '.', '/vagrant/'
 
 	# Install All The Configured Nginx Sites
 	settings["sites"].each do |site|
