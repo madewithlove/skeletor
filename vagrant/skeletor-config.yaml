@@ -11,4 +11,4 @@ ports:
     mysql: "33060"
 
 # Set to true what you want to install on top of the base box
-elasticsearch: true
+elasticsearch: false
