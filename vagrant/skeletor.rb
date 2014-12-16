@@ -22,10 +22,10 @@ class Skeletor
 	# Run The Provisioning Scripts 
 	config.vm.provision "shell" do |s|
 	  # Installs the stuff we always need (PHP, nginx, etc)
-	  s.path = "./vagrant/baseprovision.sh"
+	  s.path = "./vagrant/scripts/provision/base.sh"
 
 	  # Install the custom things we selected in our config file
-	  s.path = "./vagrant/scripts/customprovision.sh"
+	  s.path = "./vagrant/scripts/provision/custom.sh"
 	end
 
 	# Sync the vm's /vagrant folder to our project root
@@ -33,7 +33,7 @@ class Skeletor
 
 	# Make an nginx vhost with <projectname>.dev as url and /vagrant/public as docroot
 	config.vm.provision "shell" do |s|
-	  s.inline = "bash /vagrant/vagrant/nginx-serve.sh $1 $2"
+	  s.inline = "bash /vagrant/vagrant/scripts/provision/nginx-serve.sh $1 $2"
 	  s.args = [ settings["projectname" ] + '.dev' , '/vagrant/public' ]
 	end
 

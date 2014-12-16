@@ -1,4 +1,6 @@
 #!/bin/sh
+# We use this script to parse the YAML config file. Pay no attention to it.
+
 parse_yaml() {
    local prefix=$2
    local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
