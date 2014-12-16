@@ -144,6 +144,7 @@ npm install -g bower
 
 # Install RVM, Ruby, Bundler
 sh /vagrant/vagrant/scripts/rvm.sh
+gem install bundler && cd /vagrant && bundler install
 
 # Install SQLite
 

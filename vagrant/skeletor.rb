@@ -31,7 +31,7 @@ class Skeletor
 	# Make an nginx vhost with <projectname>.dev as url and /vagrant/public as docroot
 	config.vm.provision "shell" do |s|
 	  s.inline = "bash /vagrant/vagrant/nginx-serve.sh $1 $2"
-	  s.args = [ settings[projectname] + '.dev' ], '/vagrant/public' ]
+	  s.args = [ settings["projectname"] + '.dev' , '/vagrant/public' ]
 	end
 
 	# Configure All Of The Server Environment Variables
