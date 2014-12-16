@@ -37,18 +37,15 @@ class Skeletor
 	  s.args = [ settings["projectname" ] + '.dev' , '/vagrant/public' ]
 	end
 
-	# Configure All Of The Server Environment Variables
-    if settings.has_key?("variables")
-      settings["variables"].each do |var|
-        config.vm.provision "shell" do |s|
-            s.inline = "echo \"\nenv[$1] = '$2'\" >> /etc/php5/fpm/php-fpm.conf"
-            s.args = [var["key"], var["value"]]
-        end
-      end
+	# Configure environment variable APP_ENV=local, used for Laravel environment detection
+	config.vm.provision "shell" do |s|
+      s.inline = "echo \"\nenv[$1] = '$2'\" >> /etc/php5/fpm/php-fpm.conf"
+      s.args = ['APP_ENV', 'local']
+    end
 
-      config.vm.provision "shell" do |s|
-          s.inline = "service php5-fpm restart"
-      end
+    # Restart php5-fpm for the environment variable to take effect
+    config.vm.provision "shell" do |s|
+        s.inline = "service php5-fpm restart"
     end
 
     # Update Composer On Every Provision

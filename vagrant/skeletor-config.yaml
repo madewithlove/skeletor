@@ -10,9 +10,5 @@ ports:
     web: "8000"
     mysql: "33060"
 
-variables:
-    - key: APP_ENV
-      value: local
-
 # Set to true what you want to install on top of the base box
 elasticsearch: true
