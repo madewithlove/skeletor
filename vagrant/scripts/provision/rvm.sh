@@ -6,7 +6,11 @@ echo ">>> Installing RVM"
 echo ">>> Importing rvm public key"
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 
-# Re-source .profile if exists
-if [[ -f "/home/vagrant/.profile" ]]; then
-    . /home/vagrant/.profile
-fi
+# Install RVM
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+# Source RVM to activate it
+. /usr/local/rvm/scripts/rvm
+
+# Re-source .profile
+. /home/vagrant/.profile

@@ -19,12 +19,13 @@ class Skeletor
 	config.vm.network "forwarded_port", guest: 22, host: settings["ports"]["ssh"], id: "ssh"
 	config.vm.network "forwarded_port", guest: 3306, host: settings["ports"]["mysql"]
 
-	# Run The Provisioning Scripts 
+	# Run the base provisioning script. Installs the stuff we always need (PHP, nginx, etc)
 	config.vm.provision "shell" do |s|
-	  # Installs the stuff we always need (PHP, nginx, etc)
 	  s.path = "./vagrant/scripts/provision/base.sh"
+	end
 
-	  # Install the custom things we selected in our config file
+	# Run the custom provisioning scripts. Will install what we selected in our config file
+	config.vm.provision "shell" do |s|
 	  s.path = "./vagrant/scripts/provision/custom.sh"
 	end
 
