@@ -1,0 +1,14 @@
+---
+# change - make 'xxx' unique across projects
+ip: "192.168.57.100"
+
+ # change to your project name
+projectname: "projectname"
+
+ports:
+    ssh: "56201"
+    web: "8000"
+    mysql: "33060"
+
+# Set to true what you want to install on top of the base box
+elasticsearch: false
