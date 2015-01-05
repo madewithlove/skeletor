@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
 	////////////////////////////////////////////////////////////////////
 	/////////////////////////////// COMMANDS ///////////////////////////
@@ -32,6 +32,10 @@ module.exports = function(grunt) {
 	grunt.registerTask('minify', 'Minify the files', [
 		'cssmin',
 		'uglify'
+	]);
+
+	grunt.registerTask('images', 'Recompress images', [
+		'newer:imagemin',
 	]);
 
 	grunt.registerTask('lint', 'Lint the files', [
