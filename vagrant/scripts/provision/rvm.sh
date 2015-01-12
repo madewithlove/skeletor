@@ -14,3 +14,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 
 # Re-source .profile
 . /home/vagrant/.profile
+
+# Add vagrant user to rvm group
+echo ">>> Adding vagrant user to the RVM group to prevent permission issues"
+sudo usermod -a -G rvm vagrant
