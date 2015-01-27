@@ -13,7 +13,7 @@ if [[ $config_elasticsearch == true ]]
 		sudo apt-get update && sh /vagrant/vagrant/scripts/provision/elasticsearch.sh
 fi
 
-# Elasticsearch
+# Mailcatcher
 if [[ $config_mailcatcher == true ]] 
 	then
 		echo ">>> Installing Mailcatcher"
