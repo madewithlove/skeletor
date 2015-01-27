@@ -12,3 +12,4 @@ ports:
 
 # Set to true what you want to install on top of the base box
 elasticsearch: false
+mailcatcher: false
