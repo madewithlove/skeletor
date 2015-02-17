@@ -1,4 +1,5 @@
 <?php
+namespace App\Entities\Models;
 
 use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;

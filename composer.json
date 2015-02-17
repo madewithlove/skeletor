@@ -26,11 +26,11 @@
   },
   "autoload": {
 	"classmap": [
-	  "app/database/migrations",
-	  "app/database/seeds"
+	  "app/database/migrations"
 	],
 	"psr-4": {
-	  "App\\": "app/App"
+	  "App\\": "app/App",
+	  "App\\Seeders\\": "app/database/seeds"
 	}
   },
   "repositories": [
@@ -52,15 +52,10 @@
 	  "php artisan optimize"
 	],
 	"post-create-project-cmd": [
-	  "mkdir -p app/App/Models",
-	  "mv app/models/User.php app/App/Models/User.php",
-	  "rm -rf app/tests/ExampleTest.php app/database/seeds/.gitkeep CONTRIBUTING.md app/controllers app/tests/* app/commands app/models app/views/hello.php",
-	  "vendor/bin/codecept bootstrap app",
-	  "mv app/codeception.yml ./codeception.yml",
 	  "php artisan key:generate",
-	  "curl -L http://bit.ly/vaprobash > Vagrantfile",
 	  "git init",
-	  "vendor/bin/php-cs-fixer fix app --fixers='-indentation'"
+	  "vendor/bin/php-cs-fixer fix app --fixers='-indentation'",
+	  "vendor/bin/codecept build"
 	]
   },
   "config": {

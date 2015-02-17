@@ -1,7 +1,10 @@
 <?php
+namespace App\Seeders;
 
-class DatabaseSeeder extends Seeder {
+use Illuminate\Database\Seeder;
 
+class DatabaseSeeder extends Seeder
+{
 	/**
 	 * Run the database seeds.
 	 *
@@ -13,5 +16,4 @@ class DatabaseSeeder extends Seeder {
 
 		// $this->call('UserTableSeeder');
 	}
-
 }
