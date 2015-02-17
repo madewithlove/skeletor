@@ -1,0 +1,31 @@
+suites:
+    Remindme:
+        namespace: Remindme
+        psr4_prefix: Remindme
+        spec_prefix: ''
+        src_path: app/tests/phpspec
+        spec_path: app/tests/phpspec
+extensions:
+    - PhpSpec\Laravel\Extension\LaravelExtension
+    - PhpSpec\Extension\CodeCoverageExtension
+laravel_extension:
+    migrate_db: false
+    testing_environment: 'testing'
+code_coverage:
+    whitelist:
+        - app/Remindme
+    blacklist:
+        - app/Remindme/Console
+        - app/Remindme/Http
+        - app/Remindme/Mailers
+        - app/Remindme/Providers
+    blacklist_files:
+        - app/Remindme/Abstracts/AbstractApiController.php
+        - app/Remindme/Abstracts/AbstractController.php
+        - app/Remindme/Abstracts/AbstractIndexMigration.php
+        - app/Remindme/Abstracts/AbstractSeeder.php
+        - app/Remindme/RemindmeServiceProvider.php
+    format:
+        - clover
+    output:
+        clover: coverage.xml

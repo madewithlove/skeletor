@@ -1,0 +1,12 @@
+suites:
+    Remindme:
+        namespace: Remindme
+        psr4_prefix: Remindme
+        spec_prefix: ''
+        src_path: app/tests/phpspec
+        spec_path: app/tests/phpspec
+extensions:
+    - PhpSpec\Laravel\Extension\LaravelExtension
+laravel_extension:
+    migrate_db: false
+    testing_environment: 'testing'
