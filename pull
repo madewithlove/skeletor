@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# Updaters
+# //////////////////////////////////////////////////////////////////////
+
+# Update the repository
+function update_repository {
+	git fetch -pt
+	git pull
+}
+
+# Update the front-end
+function update_front_end {
+	bundle install
+	npm install
+	node_modules/.bin/bower install
+	node_modules/.bin/grunt rebuild
+}
+
+# Update the back end
+function update_back_end {
+	composer install
+}
+
+# Update the database
+function update_database {
+	rm app/database/codeception.sqlite
+	touch app/database/codeception.sqlite
+	php artisan db:remigrate
+	php artisan db:remigrate --env="testing"
+}
+
+# Command line
+# //////////////////////////////////////////////////////////////////////
+
+case "$1" in
+	front)
+		update_repository
+		update_front_end
+	;;
+
+	back)
+		update_repository
+		update_back_end
+		update_database
+	;;
+
+	db)
+		update_repository
+		update_database
+	;;
+
+	all)
+		update_repository
+		update_back_end
+		update_front_end
+		update_database
+	;;
+
+	# Help
+	*)
+		echo "Usage:"
+		echo " pull back  - Update the back-end"
+		echo " pull front - Update the front-end"
+		echo " pull db    - Update the database"
+		echo " pull all   - Update everything"
+	;;
+esac
