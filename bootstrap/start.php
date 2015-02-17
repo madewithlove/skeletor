@@ -24,9 +24,9 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
-	'local' => array('Brams-MacBook-Pro.local', 'Dieters-MacBook-Pro.local', 'marcbook-air.lan', 'Macedoine', 'vagrant'),
-));
+$env = $app->detectEnvironment(function () {
+	return getenv('APP_ENV') ?: 'local';
+});
 
 /*
 |--------------------------------------------------------------------------
