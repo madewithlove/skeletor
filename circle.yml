@@ -26,4 +26,5 @@ test:
 		- vendor/bin/phpspec run --no-interaction
 		- vendor/bin/codecept run -vvv --no-interaction
 		- node_modules/.bin/grunt lint
+		- bash dredd.sh
 
