@@ -1,8 +1,14 @@
 # Cache and compiled
 bootstrap/compiled.php
+public/app/ts/tsd.ts
 .sass-cache
 _ide_helper.php
 _ide_helper_models.php
+coverage.xml
+docs/api/index.html
+docs/api/index.apib
+app/tests/codeception/_output
+*.sqlite_snapshot
 
 # Assets
 *.css.map
