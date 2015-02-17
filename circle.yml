@@ -1,0 +1,29 @@
+machine:
+	php:
+		version: 5.5.15
+	ruby:
+		version: 2.1.3
+	environment:
+		APP_ENV: circleci
+
+dependencies:
+	pre:
+		- pecl install xdebug
+		# - sh vagrant/scripts/provision/elasticsearch.sh
+	cache_directories:
+		- 'node_modules'
+	override:
+		- bundle install
+		- npm install
+		- composer install --prefer-source --no-interaction
+
+test:
+	pre:
+		- touch app/database/codeception.sqlite
+		- php artisan db:remigrate --env="testing"
+	override:
+		- php artisan env
+		- vendor/bin/phpspec run --no-interaction
+		- vendor/bin/codecept run -vvv --no-interaction
+		- node_modules/.bin/grunt lint
+
