@@ -82,6 +82,7 @@ return [
 		'Config',
 		'Lang',
 		'Assets',
+		'Route',
 	],
 
 	/*
