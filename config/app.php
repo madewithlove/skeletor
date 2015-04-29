@@ -145,6 +145,11 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+		/**
+		 * Packages
+		 */
+
+		'TwigBridge\ServiceProvider',
 	],
 
 	/*
@@ -193,6 +198,12 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 
+		/**
+		 * Facades
+		 */
+
+		'Twig'      => 'TwigBridge\Facade\Twig',
+		'Debugbar'  => 'Barryvdh\Debugbar\Facade',
 	],
 
 ];
