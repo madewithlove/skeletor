@@ -2,7 +2,7 @@
 # Change - make 'xxx' unique across projects.
 # And and the chosen ip for this project on at:
 # https://madewithlove.atlassian.net/wiki/display/DT/Vagrant+boxes+hostname+list
-ip: "192.168.57.100"
+ip: "192.168.56.100"
 
  # Change to your project name
 projectname: "projectname"
