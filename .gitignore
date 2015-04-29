@@ -1,3 +1,39 @@
-/vendor
-/node_modules
+# Cache and compiled
+bootstrap/compiled.php
+public/app/ts/tsd.ts
+.sass-cache
+_ide_helper.php
+_ide_helper_models.php
+coverage.xml
+docs/api/index.html
+docs/api/index.apib
+app/tests/codeception/_output
+*.sqlite_snapshot
+
+# Assets
+*.css.map
+*.js.map
+public/css
+public/fonts
+public/js
+public/sass/font
+public/builds
+
+# Dependencies
+node_modules
+public/components
+vendor
+
+# Localization
+*.mo
+*.pot
+
+# Development
+.env.*.php
+.env.php
+.vagrant
+
+# Dotfiles
 .env
+.DS_Store
+Thumbs.db
