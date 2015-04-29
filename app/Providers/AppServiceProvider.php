@@ -13,7 +13,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if ($this->app->environment('local')) {
+            $this->app->register('Way\Generators\GeneratorsServiceProvider');
+            $this->app->register('Barryvdh\Debugbar\ServiceProvider');
+            $this->app->register('Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider');
+        }
     }
 
     /**

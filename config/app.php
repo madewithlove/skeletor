@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'log' => 'single',
+    'log' => 'daily',
 
     /*
     |--------------------------------------------------------------------------
@@ -143,6 +143,8 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        TwigBridge\ServiceProvider::class,
 
     ],
 
@@ -192,6 +194,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        /**
+         * Facades
+         */
+
+        'Twig'      => TwigBridge\Facade\Twig::class,
+        'Debugbar'  => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
