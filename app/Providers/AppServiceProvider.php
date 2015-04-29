@@ -14,9 +14,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->environment('local')) {
-            $this->app->register('Way\Generators\GeneratorsServiceProvider');
-            $this->app->register('Barryvdh\Debugbar\ServiceProvider');
-            $this->app->register('Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider');
+            $this->app->register(\Laracasts\Generators\GeneratorsServiceProvider::class);
+            $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
         }
     }
 
@@ -27,6 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            \Illuminate\Contracts\Auth\Registrar::class,
+            \App\Services\Registrar::class
+        );
     }
 }
