@@ -1,5 +1,7 @@
 # Skeletor
 
+![Skeletor](https://pbs.twimg.com/profile_images/146235348/skeletor.jpg)
+
 ## Creating a new project
 
 Replace `{project}` with the project name
