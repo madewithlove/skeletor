@@ -5,7 +5,7 @@
 Replace `{project}` with the project name
 
 ```bash
-$ composer create-project madewithlove/skeletor {project} -s dev
+$ composer create-project madewithlove/skeletor {project} "4.2.*@dev" -s dev
 ```
 
 ### Updating the skeleton
