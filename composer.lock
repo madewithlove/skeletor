@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3fc5878dd8484a86c21a227f55267afa",
+    "hash": "64238500fe3aef6d5bfe2057be52f460",
     "packages": [
         {
             "name": "anahkiasen/arrounded",
@@ -2137,6 +2137,57 @@
                 "sublime"
             ],
             "time": "2015-03-17 08:00:28"
+        },
+        {
+            "name": "benconstable/phpspec-laravel",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BenConstable/phpspec-laravel.git",
+                "reference": "7632ea322ee3df3d46abb09846381219cf8285b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BenConstable/phpspec-laravel/zipball/7632ea322ee3df3d46abb09846381219cf8285b0",
+                "reference": "7632ea322ee3df3d46abb09846381219cf8285b0",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.0",
+                "phpspec/phpspec": "~2.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-laravel-4": "1.x-dev",
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PhpSpec": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Constable",
+                    "email": "ben@benconstable.co.uk",
+                    "homepage": "http://www.benconstable.co.uk"
+                }
+            ],
+            "description": "Test your Laravel applications with PhpSpec",
+            "homepage": "http://github.com/BenConstable/phpspec-laravel",
+            "keywords": [
+                "laravel",
+                "phpspec",
+                "test",
+                "testing"
+            ],
+            "time": "2015-03-15 16:10:03"
         },
         {
             "name": "codeception/codeception",
