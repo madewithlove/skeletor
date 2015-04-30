@@ -7,7 +7,7 @@ _ide_helper_models.php
 coverage.xml
 docs/api/index.html
 docs/api/index.apib
-app/tests/codeception/_output
+tests/codeception/_output
 *.sqlite_snapshot
 
 # Assets
