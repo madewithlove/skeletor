@@ -15,6 +15,7 @@
 		"phpspec/phpspec": "~2.1",
 		"fabpot/php-cs-fixer": "~1.7",
 		"codeception/codeception": "~2.0",
+		"benconstable/phpspec-laravel": "~2.0",
 		"barryvdh/laravel-ide-helper": "~2.0",
 		"barryvdh/laravel-debugbar": "~2.0",
 		"symfony/var-dumper": "~2.6",

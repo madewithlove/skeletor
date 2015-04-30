@@ -3,3 +3,10 @@ suites:
         namespace: App
         psr4_prefix: App
         src_path: app
+        src_path: tests/phpspec
+        spec_path: tests/phpspec
+extensions:
+    - PhpSpec\Laravel\Extension\LaravelExtension
+laravel_extension:
+    migrate_db: false
+    testing_environment: 'testing'
