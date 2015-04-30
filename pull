@@ -28,6 +28,7 @@ function update_database {
 	touch database/codeception.sqlite
 	php artisan db:remigrate
 	php artisan db:remigrate --env="testing"
+	sqlite3 database/codeception.sqlite .dump > tests/codeception/_data/dump.sql
 }
 
 # Command line
