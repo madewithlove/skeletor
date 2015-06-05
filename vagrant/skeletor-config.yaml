@@ -5,6 +5,7 @@ ip: "192.168.xx.xxx"
  # change to your project name
 projectname: "projectname"
 
+# change to kind of match the first three digits of the IP suffix for uniqueness across projects
 ports:
     ssh: "56xxx"
     web: "8xxx"

@@ -1,8 +1,8 @@
 ---
 # Set all these values to the same as skeletor-config.yaml when you bake an image
+
 ip: "192.168.xx.xxx"
 
- # change to your project name
 projectname: "projectname"
 
 ports:
