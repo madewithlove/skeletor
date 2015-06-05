@@ -1,14 +1,14 @@
 ---
 # change - make 'xxx' unique across projects
-ip: "192.168.57.100"
+ip: "192.168.xx.xxx"
 
  # change to your project name
 projectname: "projectname"
 
 ports:
-    ssh: "56201"
-    web: "8000"
-    mysql: "33060"
+    ssh: "56xxx"
+    web: "8xxx"
+    mysql: "33xxx"
 
 # Set to true what you want to install on top of the base box
 elasticsearch: false
