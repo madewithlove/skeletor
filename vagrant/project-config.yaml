@@ -1,0 +1,11 @@
+---
+# Set all these values to the same as skeletor-config.yaml when you bake an image
+
+ip: "192.168.xx.xxx"
+
+projectname: "projectname"
+
+ports:
+    ssh: "56xxx"
+    web: "8xxx"
+    mysql: "33xxx"
