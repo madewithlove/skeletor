@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -22,8 +21,6 @@ class PasswordController extends Controller
 
     /**
      * Create a new password controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
