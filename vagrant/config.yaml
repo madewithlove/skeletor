@@ -1,16 +1,16 @@
 ---
 # Change - make 'xxx' unique across projects.
-# And and the chosen ip for this project on at:
-# https://madewithlove.atlassian.net/wiki/display/DT/Vagrant+boxes+hostname+list
-ip: "192.168.56.100"
+# See what is taken and add your chosen IP here:
+# https://github.com/madewithlove/devops/blob/master/documentation/list_ipadresses_vagrant.md
+ip: "192.168.xxx.xxx"
 
  # Change to your project name
 projectname: "projectname"
 
 ports:
-    ssh: "56201"
-    web: "8000"
-    mysql: "33060"
+    ssh: "56xxx"
+    web: "8xxx"
+    mysql: "33xxx"
 
 # Set to true what you want to install on top of the base box
 elasticsearch: false
