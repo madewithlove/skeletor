@@ -30,8 +30,6 @@ vendor
 *.pot
 
 # Development
-.env.*.php
-.env.php
 .vagrant
 
 # Dotfiles
