@@ -27,7 +27,7 @@ dependencies:
     - composer install --prefer-source --no-interaction
     - node_modules/.bin/bower install
     # - php artisan serve: {background: true}
-    # - phantomjs --webdriver="4444" --ignore-ssl-errors="true": {background: true}
+    # - phantomjs --webdriver="4444" --ignore-ssl-errors="true" --webdriver-loglevel="debug" --debug="true": {background: true}
 
 database:
   post:
