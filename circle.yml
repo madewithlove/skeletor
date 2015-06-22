@@ -41,6 +41,6 @@ test:
     - php artisan twig:lint
     - node_modules/.bin/grunt rebuild
     - node_modules/.bin/grunt lint
-    - vendor/bin/codecept run -vvv --no-interaction --debug --xml="$CIRCLE_TEST_REPORTS/codeception/ignition.xml"
+    - vendor/bin/codecept run -vvv --no-interaction --debug --xml="$CIRCLE_TEST_REPORTS/codeception/project.xml"
     - vendor/bin/phpspec run -vvv --no-interaction --format="pretty"
-    - vendor/bin/phpspec run -vvv --no-interaction --format="junit" > $CIRCLE_TEST_REPORTS/phpspec/ignition.xml # This one is just for CircleCI
+    - vendor/bin/phpspec run -vvv --no-interaction --format="junit" > $CIRCLE_TEST_REPORTS/phpspec/project.xml # This one is just for CircleCI
