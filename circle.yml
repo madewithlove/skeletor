@@ -16,6 +16,7 @@ dependencies:
     - elasticsearch-1.6.0
     - node_modules
     - public/components
+    - vendor
   pre:
     - pecl install xdebug
     - echo "memory_limit = 1024M" > ~/.phpenv/versions/5.5.21/etc/conf.d/memory.ini
