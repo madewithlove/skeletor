@@ -7,9 +7,9 @@ machine:
     APP_ENV: testing
 
 general:
-    artifacts:
-        - "tests/codeception/_output"
-        - "storage/logs"
+  artifacts:
+    - "tests/codeception/_output"
+    - "storage/logs"
 
 dependencies:
   cache_directories:
