@@ -18,7 +18,7 @@ dependencies:
     - public/components
     - vendor
   pre:
-    - pecl install xdebug
+    - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini
     - echo "memory_limit = 1024M" > ~/.phpenv/versions/5.5.21/etc/conf.d/memory.ini
     - if [[ ! -e elasticsearch-1.6.0 ]]; then wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.6.0.tar.gz && tar -xvf elasticsearch-1.6.0.tar.gz; fi
     - elasticsearch-1.6.0/bin/elasticsearch: {background: true}
