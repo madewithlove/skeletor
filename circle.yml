@@ -14,7 +14,6 @@ general:
 dependencies:
   cache_directories:
     - elasticsearch-1.6.0
-    - node_modules
     - public/components
     - vendor
   pre:
