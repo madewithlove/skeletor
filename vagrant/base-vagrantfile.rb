@@ -7,6 +7,9 @@ class Skeletor
 	# Configure A Private Network IP
 	config.vm.network :private_network, ip: settings["ip"]
 
+	# Forward SSH key from local
+	config.ssh.forward_agent = true
+
 	# Configure A Few VirtualBox Settings
 	config.vm.provider "virtualbox" do |vb|
 	  vb.customize ["modifyvm", :id, "--memory", "1024"]
