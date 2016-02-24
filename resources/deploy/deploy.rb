@@ -6,7 +6,7 @@ set :ssh_options, {forward_agent: true}
 
 # Repository
 set :scm, :git
-set :repo_url, 'git@github.com:madewithlove/clinical-case-creator.git'
+set :repo_url, 'git@github.com:madewithlove/skeletor.git'
 set :branch, 'develop'
 
 # Logging
