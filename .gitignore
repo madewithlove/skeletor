@@ -1,6 +1,5 @@
 # Cache and compiled
 bootstrap/compiled.php
-public/app/ts/tsd.ts
 .sass-cache
 .php_cs.cache
 _ide_helper.php
@@ -14,15 +13,10 @@ tests/codeception/_output
 # Assets
 *.css.map
 *.js.map
-public/css
-public/fonts
-public/js
-public/sass/font
 public/builds
 
 # Dependencies
 node_modules
-public/components
 vendor
 
 # Localization
@@ -31,8 +25,5 @@ vendor
 
 # Development
 .vagrant
-
-# Dotfiles
+Homestead.yaml
 .env
-.DS_Store
-Thumbs.db

@@ -1,26 +1,47 @@
 <?php
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
 
-use Symfony\CS\Config\Config;
-use Symfony\CS\Finder\DefaultFinder;
-use Symfony\CS\Fixer\Contrib\HeaderCommentFixer;
-use Symfony\CS\FixerInterface;
+require 'vendor/autoload.php';
 
-$finder = DefaultFinder::create()->in('app');
+$finder = Finder::create()->in([
+    'app',
+    'config',
+    'database',
+    'tests/codeception/acceptance',
+    'tests/codeception/functional',
+    'tests/codeception/unit',
+]);
 
 return Config::create()
-    ->level(FixerInterface::SYMFONY_LEVEL)
-    ->fixers([
-        'ereg_to_preg',
-        'multiline_spaces_before_semicolon',
-        'newline_after_open_tag',
-        'no_blank_lines_before_namespace',
-        'ordered_use',
-        'php4_constructor',
-        'phpdoc_order',
-        'short_array_syntax',
-        'short_echo_tag',
-        'strict',
-        'strict_param',
-    ])
-    ->setUsingCache(true)
-    ->finder($finder);
+             ->setRiskyAllowed(true)
+             ->setRules([
+                 '@Symfony'                                  => true,
+                 'align_double_arrow'                        => false,
+                 'align_equals'                              => false,
+                 'concat_with_spaces'                        => false,
+                 'echo_to_print'                             => true,
+                 'ereg_to_preg'                              => true,
+                 'header_comment'                            => false,
+                 'linebreak_after_opening_tag'               => true,
+                 'long_array_syntax'                         => false,
+                 'no_blank_lines_before_namespace'           => true,
+                 'no_multiline_whitespace_before_semicolons' => true,
+                 'no_php4_constructor'                       => true,
+                 'no_short_echo_tag'                         => true,
+                 'no_useless_return'                         => true,
+                 'not_operator_with_space'                   => false,
+                 'not_operator_with_successor_space'         => false,
+                 'ordered_imports'                           => true,
+                 'php_unit_construct'                        => true,
+                 'php_unit_strict'                           => false,
+                 'phpdoc_order'                              => true,
+                 'phpdoc_property'                           => true,
+                 'phpdoc_var_to_type'                        => false,
+                 'psr0'                                      => true,
+                 'short_array_syntax'                        => true,
+                 'strict_comparison'                         => true,
+                 'strict_param'                              => true,
+             ])
+             ->setUsingCache(true)
+             ->finder($finder);

@@ -1,3 +1,1 @@
-PRAGMA foreign_keys=OFF;
-BEGIN TRANSACTION;
-COMMIT;
+/* Replace this file with actual dump of your database */

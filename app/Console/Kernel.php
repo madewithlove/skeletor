@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
@@ -12,7 +13,6 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \App\Console\Commands\RemigrateDatabase::class,
     ];
 
     /**
