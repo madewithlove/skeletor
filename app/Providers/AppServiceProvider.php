@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (env('APP_DEBUG')) {
+        if (config('app.debug')) {
             foreach ($this->developmentProviders as $provider) {
                 $this->app->register($provider);
             }
