@@ -1,8 +1,8 @@
 machine:
+  node:
+    version: stable
   php:
-    version: 5.5.21
-  ruby:
-    version: 2.1.3
+    version: 5.6.14
   environment:
     APP_ENV: testing
 
@@ -13,19 +13,18 @@ general:
 
 dependencies:
   cache_directories:
-    - elasticsearch-1.6.0
-    - public/components
     - vendor
   pre:
-    # - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini
+    - cp .env.testing .env
     - echo "memory_limit = 1024M" > ~/.phpenv/versions/$(phpenv global)/etc/conf.d/memory.ini
-    - if [[ ! -e elasticsearch-1.6.0 ]]; then wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.6.0.tar.gz && tar -xvf elasticsearch-1.6.0.tar.gz; fi
-    - elasticsearch-1.6.0/bin/elasticsearch: {background: true}
+    - echo "always_populate_raw_post_data = -1" > ~/.phpenv/versions/$(phpenv global)/etc/conf.d/post.ini
+    # - wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-2.0.0.tar.gz
+    # - tar -xvf elasticsearch-2.0.0.tar.gz
+    # - elasticsearch-2.0.0/bin/elasticsearch: {background: true}
   override:
-    - bundle install
+    - npm install npm@3 -g
     - npm install
     - composer install --prefer-source --no-interaction
-    - node_modules/.bin/bower install
     # - php artisan serve: {background: true}
     # - phantomjs --webdriver="4444" --ignore-ssl-errors="true" --webdriver-loglevel="debug" --debug="true": {background: true}
 
@@ -37,10 +36,15 @@ database:
 test:
   pre:
     - mkdir -p $CIRCLE_TEST_REPORTS/phpspec
+    - php artisan laroute:generate
+    - npm run api:concat
   override:
+    # Linters
     - php artisan twig:lint
-    - node_modules/.bin/grunt rebuild
-    - node_modules/.bin/grunt lint
-    - vendor/bin/codecept run -vvv --no-interaction --debug --xml="$CIRCLE_TEST_REPORTS/codeception/project.xml"
-    - vendor/bin/phpspec run -vvv --no-interaction --format="pretty"
-    - vendor/bin/phpspec run -vvv --no-interaction --format="junit" > $CIRCLE_TEST_REPORTS/phpspec/project.xml # This one is just for CircleCI
+    - npm run lint
+    - composer lint -- --dry-run
+    # Tests
+    - node_modules/.bin/webpack --bail
+    - codecept run -vvv --no-interaction --debug --xml="$CIRCLE_TEST_REPORTS/codecept/project.xml"
+    - npm test
+    - node dredd
