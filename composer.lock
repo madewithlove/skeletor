@@ -4,9 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b782cc243782bc788a199ddf62c6fcd0",
-    "content-hash": "814fe0e309683edf0ed96866d3cc8549",
+    "hash": "1dbf91cc3289e864b948133f7d0960fa",
+    "content-hash": "2315d1fe1664aa2b420c59baa2563209",
     "packages": [
+        {
+            "name": "arrounded/core",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arrounded/core.git",
+                "reference": "ce36a20e854fcfb6f1384730929adfc5b3f45cc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arrounded/core/zipball/ce36a20e854fcfb6f1384730929adfc5b3f45cc2",
+                "reference": "ce36a20e854fcfb6f1384730929adfc5b3f45cc2",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^5.2",
+                "illuminate/support": "^5.2",
+                "php": ">=5.5.9",
+                "symfony/http-foundation": "^3.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "2.0.*@dev",
+                "illuminate/container": "^5.2",
+                "illuminate/routing": "^5.2",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.2",
+                "symfony/var-dumper": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Arrounded\\Core\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Madewithlove",
+                    "email": "heroes@madewithlove.be"
+                }
+            ],
+            "description": "Core helpers for Laravel projects",
+            "keywords": [
+                "laravel"
+            ],
+            "time": "2016-02-24 13:56:19"
+        },
         {
             "name": "bugsnag/bugsnag",
             "version": "v2.6.1",

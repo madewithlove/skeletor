@@ -2,20 +2,31 @@
 
 namespace App\Providers;
 
+use App\Http\Composers\LayoutComposer;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\Factory;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
+     * @var array
      */
-    public function boot()
+    protected $developmentProviders = [
+        \Laracasts\Generators\GeneratorsServiceProvider::class,
+        \Barryvdh\Debugbar\ServiceProvider::class,
+        \Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+    ];
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @param Factory $view
+     */
+    public function boot(Factory $view)
     {
-        if ($this->app->environment('local')) {
-            $this->app->register(\Laracasts\Generators\GeneratorsServiceProvider::class);
-            $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
-            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
-        }
+        $view->composers([
+           LayoutComposer::class => '_layouts/global',
+        ]);
     }
 
     /**
@@ -23,6 +34,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if (env('APP_DEBUG')) {
+            foreach ($this->developmentProviders as $provider) {
+                $this->app->register($provider);
+            }
+        }
     }
 }
