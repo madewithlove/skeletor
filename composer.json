@@ -8,6 +8,7 @@
         "php": ">=5.5.9",
         "bugsnag/bugsnag-laravel": "^1.6",
         "laravel/framework": "5.2.*",
+        "lord/laroute": "^2.2",
         "rcrowe/twigbridge": "^0.9.1"
     },
     "require-dev": {

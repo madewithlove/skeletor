@@ -9,6 +9,7 @@ docs/api/index.html
 docs/api/index.apib
 tests/codeception/_output
 *.sqlite_snapshot
+resources/assets/js/routes.js
 
 # Assets
 *.css.map

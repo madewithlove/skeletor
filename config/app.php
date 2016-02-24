@@ -157,6 +157,7 @@ return [
         // Packages
         TwigBridge\ServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
+        Lord\Laroute\LarouteServiceProvider::class,
 
     ],
 
