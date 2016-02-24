@@ -26,5 +26,4 @@ vendor
 
 # Development
 .vagrant
-Homestead.yaml
 .env
