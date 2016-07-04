@@ -19,5 +19,4 @@ $ git pull upstream master
 
 ## Setting up the vagrant
 
-Edit the config file at vagrant/skeletor-config.yml.  
-After that just do 'vagrant up'to get started.
+Edit the config file at `Homestead.yaml`, after that just do 'vagrant up'to get started.
