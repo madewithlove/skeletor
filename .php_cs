@@ -46,7 +46,7 @@ return Config::create()
                  'phpdoc_order' => true,
                  'phpdoc_property' => true,
                  'phpdoc_var_to_type' => false,
-                 'psr0' => true,
+                 'psr0' => false,
                  'psr4' => true,
                  'random_api_migration' => true,
                  'short_array_syntax' => true,
