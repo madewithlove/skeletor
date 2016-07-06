@@ -18,7 +18,7 @@
         "codeception/codeception": "^2.1",
         "ddelnano/dredd-hooks-php": "^1.1",
         "doctrine/dbal": "^2.5",
-        "fabpot/php-cs-fixer": "2.0.x@dev",
+        "fabpot/php-cs-fixer": "dev-master",
         "fzaninotto/faker": "^1.5",
         "laracasts/generators": "^1.1",
         "laravel/homestead": "^3.0",
@@ -54,7 +54,8 @@
             "php artisan ide-helper:generate",
             "php artisan ide-helper:meta",
             "php artisan ide-helper:models --nowrite"
-        ]
+        ],
+        "lint": "php-cs-fixer fix -vvv"
     },
     "config": {
         "preferred-install": "dist",
