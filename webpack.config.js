@@ -1,3 +1,3 @@
-module.exports = require('madewithlove-webpack-config')({
+module.exports = require('madewithlove-webpack-config').default({
     // ...
 });
