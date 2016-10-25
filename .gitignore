@@ -10,6 +10,7 @@ docs/api/index.apib
 tests/codeception/_output
 *.sqlite_snapshot
 resources/assets/js/routes.js
+.idea/
 
 # Assets
 *.css.map
