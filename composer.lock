@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9124dab1de5423ed772f2d9792c364a",
+    "content-hash": "58c969f42526de94c0380f1e975c71ff",
     "packages": [
         {
             "name": "arrounded/core",
@@ -668,57 +668,6 @@
                 "storage"
             ],
             "time": "2016-10-19T20:38:46+00:00"
-        },
-        {
-            "name": "lord/laroute",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aaronlord/laroute.git",
-                "reference": "97a3812af4bcc4cad87c52c142f407c270e20f09"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aaronlord/laroute/zipball/97a3812af4bcc4cad87c52c142f407c270e20f09",
-                "reference": "97a3812af4bcc4cad87c52c142f407c270e20f09",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/config": "5.0.*|5.1.*|5.2.*|5.3.*",
-                "illuminate/console": "5.0.*|5.1.*|5.2.*|5.3.*",
-                "illuminate/filesystem": "5.0.*|5.1.*|5.2.*|5.3.*",
-                "illuminate/routing": "5.0.*|5.1.*|5.2.*|5.3.*",
-                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "dev-master",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Lord\\Laroute\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Aaron Lord",
-                    "email": "hello@aaronlord.is"
-                }
-            ],
-            "description": "Access Laravels URL/Route helper functions, from JavaScript.",
-            "keywords": [
-                "javascript",
-                "laravel",
-                "routes",
-                "routing"
-            ],
-            "time": "2016-08-12T13:38:39+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5402,7 +5351,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "lord/laroute": 20,
         "friendsofphp/php-cs-fixer": 20
     },
     "prefer-stable": false,
