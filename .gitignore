@@ -11,6 +11,7 @@ tests/codeception/_output
 *.sqlite_snapshot
 resources/assets/js/routes.js
 .idea/
+storage/debugbar
 
 # Assets
 *.css.map
