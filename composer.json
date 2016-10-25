@@ -5,11 +5,10 @@
     "license": "proprietary",
     "type": "project",
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=5.6.4",
         "arrounded/core": "^2.0",
         "bugsnag/bugsnag-laravel": "^1.6",
-        "laravel/framework": "5.2.*",
-        "lord/laroute": "5.2.*",
+        "laravel/framework": "5.3.*",
         "rcrowe/twigbridge": "^0.9.2"
     },
     "require-dev": {
@@ -22,8 +21,12 @@
         "fzaninotto/faker": "^1.6",
         "laracasts/generators": "^1.1",
         "laravel/homestead": "^3.0",
-        "mockery/mockery": "^0.9.5",
-        "phpspec/phpspec": "^2.5"
+        "mockery/mockery": "0.9.*",
+        "phpspec/phpspec": "^2.5",
+        "phpunit/phpunit": "~5.0",
+        "symfony/css-selector": "3.1.*",
+        "symfony/dom-crawler": "3.1.*"
+
     },
     "autoload": {
         "classmap": [
