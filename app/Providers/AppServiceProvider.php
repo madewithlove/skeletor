@@ -12,7 +12,6 @@ class AppServiceProvider extends ServiceProvider
      * @var array
      */
     protected $developmentProviders = [
-        \Laracasts\Generators\GeneratorsServiceProvider::class,
         \Barryvdh\Debugbar\ServiceProvider::class,
         \Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
     ];
