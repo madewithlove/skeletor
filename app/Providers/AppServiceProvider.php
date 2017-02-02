@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use App\Http\Composers\LayoutComposer;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\View\Factory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,11 +20,10 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      *
-     * @param Factory $view
      */
-    public function boot(Factory $view)
+    public function boot()
     {
-        $view->composers([
+        View::composers([
            LayoutComposer::class => '_layouts/global',
         ]);
     }
