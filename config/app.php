@@ -163,6 +163,12 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        // Packages
+        TwigBridge\ServiceProvider::class,
+        Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
+        Lord\Laroute\LarouteServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
+
         // Application
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
@@ -170,10 +176,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        // Packages
-        TwigBridge\ServiceProvider::class,
-        Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
-        Lord\Laroute\LarouteServiceProvider::class,
+
 
     ],
 
@@ -194,6 +197,7 @@ return [
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
+        'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Config' => Illuminate\Support\Facades\Config::class,
