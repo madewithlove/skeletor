@@ -24,7 +24,8 @@
         "laracasts/generators": "^1.1",
         "laravel/homestead": "^4.0",
         "mockery/mockery": "^0.9.5",
-        "phpspec/phpspec": "^2.5"
+        "phpspec/phpspec": "^2.5",
+        "roave/security-advisories": "dev-master"
     },
     "autoload": {
         "classmap": [
