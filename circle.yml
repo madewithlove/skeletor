@@ -2,7 +2,11 @@ machine:
   node:
     version: stable
   php:
-    version: 7.0.22
+    version: 7.1-fpm
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+  services:
+    - docker
   environment:
     APP_ENV: testing
 
@@ -14,17 +18,23 @@ general:
 dependencies:
   cache_directories:
     - vendor
+    - docker info
+    - ~/docker
   pre:
     - cp .env.testing .env
     - echo "memory_limit = 1024M" > ~/.phpenv/versions/$(phpenv global)/etc/conf.d/memory.ini
     - echo "always_populate_raw_post_data = -1" > ~/.phpenv/versions/$(phpenv global)/etc/conf.d/post.ini
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+    - sudo pip install --upgrade docker-compose==1.9.0
+    - docker-compose -f docker-compose.ci.yml up -d
+
     # - wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-2.0.0.tar.gz
     # - tar -xvf elasticsearch-2.0.0.tar.gz
     # - elasticsearch-2.0.0/bin/elasticsearch: {background: true}
   override:
+    - composer install --prefer-source --no-interaction
     - npm install npm@3 -g
     - npm install
-    - composer install --prefer-source --no-interaction
     # - php artisan serve: {background: true}
     # - phantomjs --webdriver="4444" --ignore-ssl-errors="true" --webdriver-loglevel="debug" --debug="true": {background: true}
 
