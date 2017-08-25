@@ -24,7 +24,7 @@ Make sure you have installed Docker (>=1.13) and Docker Compose (>=1.9)
 - Run `brew cask install docker`
 
 ### Instantiation 
-- Run `./dev up -d.` This will pull the images and run the containers (db and app) as detached (not holding your terminal). After this, you can check the containers running using docker ps or `./dev ps`. The difference here between `./dev ps` and `docker ps` is that docker ps will show ALL containers running, while `./dev ps` forwards the call to `docker-compose ps` which only shows containers running for this application (services defined in the docker-compose.yml)
+- Run `./dev up -d.` This will pull the images and run the containers (db and app) as detached (not holding your terminal). After this, you can check the containers running using docker ps or `./dev ps`. The difference here between `./dev ps` and `docker ps` is that `docker ps` will show ALL containers running, while `./dev ps` forwards the call to `docker-compose ps` which only shows containers running for this application (services defined in the docker-compose.yml)
 - That's it!
 
 If you are running into permission issues when executing `./dev` commands, try: `chmod +x ./dev`
