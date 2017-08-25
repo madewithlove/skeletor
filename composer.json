@@ -19,7 +19,7 @@
         "codeception/codeception": "^2.2",
         "ddelnano/dredd-hooks-php": "^1.1",
         "doctrine/dbal": "^2.5",
-        "friendsofphp/php-cs-fixer": "dev-master",
+        "madewithlove/php-cs-fixer-config": "^1.6",
         "fzaninotto/faker": "^1.6",
         "laracasts/generators": "^1.1",
         "laravel/homestead": "^4.0",
