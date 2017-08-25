@@ -46,21 +46,10 @@ if [ $# -gt 0 ];then
         $COMPOSE exec ${DOCKER_USER} php \
             composer "$@"
 
-    # If "unit" is used, run the integration suite.
-    elif [ "$1" == "unit" ]; then
-        shift 1
-        $COMPOSE exec ${DOCKER_USER} php \
-            composer unit-tests "$@"
-
     # If "integration" is used, run the integration suite.
-    elif [ "$1" == "integration" ]; then
+    elif [ "$1" == "dredd" ] || [ "$1" == "api:test" ]; then
         $COMPOSE exec ${DOCKER_USER} php \
-            composer integration-tests
-
-    # If "integration" is used, run the integration suite.
-    elif [ "$1" == "dredd" ]; then
-        $COMPOSE exec ${DOCKER_USER} php \
-            npm run dredd
+            npm run api:test
 
     # If "npm" is used, run npm
     # from our node container
