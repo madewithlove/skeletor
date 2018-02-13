@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+
+# stop on error.
+set -e
+
+if [[ "`uname`" == "Linux" ]]; then
+    export XDEBUG_HOST=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | head -n1)
+else
+    export XDEBUG_HOST=$(ipconfig getifaddr en1)
+fi
+
+# Other env variables
+export APP_ENV=${APP_ENV:-local}
+export APP_PORT=${APP_PORT:-80}
+export DB_PORT=${DB_PORT:-3306}
+export DB_ROOT_PASS=${DB_ROOT_PASS:-secret}
+export DB_NAME=${DB_NAME:-mwl}
+export DB_USER=${DB_USER:-mwl}
+export DB_PASS=${DB_PASS:-secret}
+
+DOCKER_USER=""
+
+# Linux users need this so we can get the files created
+# inside the container with the right ownership.
+if [ "`uname`" = 'Linux' ]; then
+    DOCKER_USER="--user $(id -u):www-data"
+fi
+
+COMPOSE="docker-compose -f docker-compose.yml"
+
+if [ $# -gt 0 ];then
+    if [ "$1" == "artisan" ]; then
+        shift 1
+        $COMPOSE exec ${DOCKER_USER} php \
+            php artisan "$@"
+
+    # If "tinker" is used, run the artisan tinker.
+    elif [ "$1" = "tinker" ]; then
+        shift 1
+        $COMPOSE exec php php artisan tinker
+
+    # If "composer" is used, pass-thru to "composer"
+    # inside a new container
+    elif [ "$1" == "composer" ]; then
+        shift 1
+        $COMPOSE exec ${DOCKER_USER} php \
+            composer "$@"
+
+    # If "integration" is used, run the integration suite.
+    elif [ "$1" == "dredd" ] || [ "$1" == "api:test" ]; then
+        $COMPOSE exec ${DOCKER_USER} php \
+            npm run api:test
+
+    # If "npm" is used, run npm
+    # from our node container
+    elif [ "$1" == "npm" ]; then
+        shift 1
+        $COMPOSE exec ${DOCKER_USER} php \
+            npm "$@"
+    elif [ "$1" == "db" ]; then
+        $COMPOSE exec db mysql -u"$DB_USER" -p"$DB_PASS" "$DB_NAME"
+    else
+        $COMPOSE "$@"
+    fi
+else
+    $COMPOSE ps
+fi

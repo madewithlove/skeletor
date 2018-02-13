@@ -1,0 +1,52 @@
+version: '2'
+services:
+  web:
+    image: madewithlove/images:nginx-1.11-alpine
+    volumes:
+     - .:/var/www/html:ro
+    ports:
+     - "${APP_PORT}:80"
+    networks:
+      - front
+  php:
+    image: madewithlove/images:php-7.1-fpm
+    volumes:
+      - .:/var/www/html
+    networks:
+      - front
+      - back
+#  queue:
+#    image: schickling/beanstalkd
+#    networks:
+#      - back
+  db:
+    image: mysql:5.7
+    volumes:
+     - dbdata:/var/lib/mysql
+    ports:
+     - "${DB_PORT}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASS}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASS}"
+    networks:
+      - back
+#  search:
+#    image: elasticsearch:2.4
+#    volumes:
+#      - elasticsearchdata:/var/lib/elasticsearch
+#    ports:
+#       - "${ELASTICSEARCH_PORT}:9200"
+#    networks:
+#      - back
+networks:
+  front:
+    driver: "bridge"
+  back:
+    driver: "bridge"
+volumes:
+  dbdata:
+    driver: "local"
+#  elasticsearchdata:
+#    driver: "local"
