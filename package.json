@@ -3,7 +3,7 @@
   "devDependencies": {
     "aglio": "^2.2.1",
     "dredd": "^1.2.0",
-    "eslint": "^3.0.1",
+    "eslint": "^6.5.1",
     "eslint-config-madewithlove": "^3.4.2",
     "madewithlove-webpack-config": "^4.1.0",
     "webpack": "^1.13.1",
